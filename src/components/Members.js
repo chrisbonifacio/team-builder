@@ -5,11 +5,11 @@ const Members = props => {
     <div className="member-list">
       {props.memberList.map(member => {
         return (
-          <div className="member">
+          <div key={member.id} className="member">
             <h1>{member.name}</h1>
-            <p>{member.email}</p>
-            <p>{member.role}</p>
-            <p>{member.bio}</p>
+            <p>Email: {member.email}</p>
+            <p>Role: {member.role}</p>
+            <p>Bio: {member.bio}</p>
           </div>
         );
       })}

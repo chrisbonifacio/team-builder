@@ -12,12 +12,17 @@ const MemberForm = props => {
   // Event Handlers
   const changeHandler = event => {
     // computed properties
+    // need to use bracket notation because the value of target.name will b
     setMember({ ...member, [event.target.name]: event.target.value });
+
     console.log(event.target.value);
   };
+  const randomMember = { ...member, ["name"]: "Chris" };
+  console.log(randomMember);
 
   const SubmitForm = event => {
     event.preventDefault();
+    // created id property for use as a key, can be used to find the location of an item in a list
     const newMember = { ...member, id: Date.now() };
     props.addMember(newMember);
   };
